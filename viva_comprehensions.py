@@ -18,6 +18,7 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity:
     :return:
     """
+    ## below:
     #list = []
     # for number in range(start, stop):
     #     if parity == parity.EVEN and number % 2 == 0:
@@ -25,7 +26,7 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     #     elif parity == parity.ODD and number % 2 != 0:
     #         list.append(int(number))
     # return list
-    
+
     return [number for number in range(start, stop) if (parity == parity.EVEN and number % 2 == 0) or (parity == parity.ODD and number % 2 != 0)]
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
@@ -40,7 +41,7 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     :param strategy:
     :return:
     """
-    pass
+    return {number: strategy(number) for number in range(start, stop)}
 
 
 def gen_set(val_in: str) -> Set:
