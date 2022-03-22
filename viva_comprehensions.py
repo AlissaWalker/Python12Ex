@@ -18,13 +18,15 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity:
     :return:
     """
-    list = []
-    for number in range(start, stop):
-        if parity == parity.EVEN and number % 2 == 0:
-            list.append(int(number))
-        elif parity == parity.ODD and number % 2 != 0:
-            list.append(int(number))
-    return list
+    #list = []
+    # for number in range(start, stop):
+    #     if parity == parity.EVEN and number % 2 == 0:
+    #         list.append(int(number))
+    #     elif parity == parity.ODD and number % 2 != 0:
+    #         list.append(int(number))
+    # return list
+    
+    return [number for number in range(start, stop) if (parity == parity.EVEN and number % 2 == 0) or (parity == parity.ODD and number % 2 != 0)]
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     """
